@@ -1,0 +1,41 @@
+<?php
+
+$request = $this->getResponseParams();
+
+if(empty($request)) {
+	die("Authentication Error: Payment transaction fail.");
+}
+
+$objCustomerDetail = $this->getCustomerDetail();
+$strCurrencyCode = $request['CurrencyCode'];
+
+$home_url = $block->getUrl();
+$response_code = $request['RespCode'];
+$response_desc = $request['RespDesc'];
+$current_order = $request['MerchantRef1'];
+$order_id = $request['MerchantRef1'];
+$transaction_ref = $request['TxnRefNo'];
+
+$objCustomerOrderDetail  = $this->getOrderDetails($order_id);
+$floatGrandTotal = $objCustomerOrderDetail->getGrandTotal();
+$floatGrandTotal = round($floatGrandTotal,2);
+$floatGrandTotal = number_format($floatGrandTotal, 2, '.', '.');
+
+?>
+<div class="col-main">
+	<div class="page-title"><h1> Your order has been received </h1></div>
+	<h2 class="sub-title"> <?php echo __('Thank you for your purchase!') ?> </h2> 
+	<p> <?php echo __('We have received your payment successfully.') ?> </p>
+
+	<p><?php echo __('Your Refrence order ID is:') .' '. __($transaction_ref); ?> </p>
+	<p>Your order ID is: <a href="<?php echo $home_url;?>sales/order/view/order_id/<?php echo $order_id;?>"><?php echo $order_id;?></a> </p>
+	<p>Your Purchase Amount is: <?php echo $strCurrencyCode ?>&nbsp;<?php echo $floatGrandTotal;?> </p>	
+
+	<p> <?php echo __('You will receive an order confirmation email with details of your order and a link to track its progress.') ?> </p>
+
+	<p>Click <a href="<?php echo $home_url;?>sales/order/print/order_id/<?php echo $current_order;?>" onclick="this.target='_blank'">here to print</a> a copy of your order confirmation. </p>
+
+	<div class="primary">
+		<button type="button" class="action primary continue" title="Continue Shopping" onclick="window.location='<?php echo $home_url;?>'"><span><span>Continue Shopping</span></span></button>
+	</div>
+</div>

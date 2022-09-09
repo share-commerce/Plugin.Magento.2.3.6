@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <default>
+        <payment>
+            <scpayment>
+                <payment_action>authorize</payment_action> <!-- You can use another methor like capture  -->
+                <model>SCPay\SCPayment\Model\PaymentMethod</model>
+                <active>0</active>
+                <title>Share Commerce Payment</title>
+                <order_status>Pending_SCPay</order_status>                
+                <visible_on_front>0</visible_on_front>
+                <allowspecific>0</allowspecific>                
+            </scpayment>
+        </payment>
+    </default>
+</config>
