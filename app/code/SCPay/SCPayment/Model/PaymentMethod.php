@@ -55,8 +55,8 @@ class PaymentMethod extends \Magento\Payment\Model\Method\AbstractMethod
      */
     public function initialize($paymentAction, $stateObject)
     {        
-        $stateObject->setState("Pending_SCPay");
-        $stateObject->setStatus("Pending_SCPay");
+        $stateObject->setState('Pending_SCPay');
+        $stateObject->setStatus('Pending_SCPay');
         $stateObject->setIsNotified(false); 
     }
 

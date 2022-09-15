@@ -32,7 +32,7 @@ class Response extends \SCPay\SCPayment\Controller\AbstractCheckoutRedirectActio
 		$configHelper = $this->getConfigSettings();
 		$objCustomerData = $this->getCustomerSession();
 
-		$signstr = "";
+		$signstr = '';
         foreach ($_REQUEST as $key => $value) {
             if ($key == 'SCSign' || $key == 'route') {
                 continue;

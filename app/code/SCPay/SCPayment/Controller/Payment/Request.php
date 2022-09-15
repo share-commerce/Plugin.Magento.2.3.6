@@ -21,7 +21,7 @@ class Request extends \SCPay\SCPayment\Controller\AbstractCheckoutRedirectAction
 		$orderId = $this->getCheckoutSession()->getLastRealOrderId();
 
 		if(empty($orderId)) {
-			die("Authentication Error: Order is is empty.");
+			die('Authentication Error: Order is is empty.');
 		}
 
 		$order = $this->getOrderDetailByOrderId($orderId);
