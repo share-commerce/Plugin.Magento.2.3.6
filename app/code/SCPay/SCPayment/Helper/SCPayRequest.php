@@ -90,7 +90,7 @@ class SCPayRequest extends AbstractHelper{
 
     function getPaymentGatewayRedirectUrl() {
     	if ($this->objConfigSettings['mode']) {
-    		return 'https://staging.payment.share-commerce.com/Payment';
+    		return 'https://stagingpayment.share-commerce.com/Payment';
     	} else {  		
     		return 'https://payment.share-commerce.com/Payment';
     	}
