@@ -6,7 +6,7 @@
                 <payment_action>authorize</payment_action> <!-- You can use another methor like capture  -->
                 <model>SCPay\SCPayment\Model\PaymentMethod</model>
                 <active>0</active>
-                <title>Share Commerce Payment</title>
+                <title>Share Commerce</title>
                 <order_status>Pending_SCPay</order_status>                
                 <visible_on_front>0</visible_on_front>
                 <allowspecific>0</allowspecific>                
